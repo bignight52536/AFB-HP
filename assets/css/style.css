@@ -1,167 +1,276 @@
-/* Reset + layout basics */
+/* --------------------------------------------------
+   RESET & BASE
+-------------------------------------------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Noto Sans JP", sans-serif;
-    background: #f5f5f5;
-    color: #333;
+  font-family: "Noto Sans JP", sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 120px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    background-image: url(../images/logo-bg.png);
-    background-repeat: no-repeat;
-    background-color: #73D5FF;
-}
-
-.logo img {
-    height: 40px;
-}
-
-.nav-bar {
-    display: flex;
-    gap: 60px;
-}
-
-.nav-link {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-.link-en {
-    font-family: 'Fugaz One';
-    font-size: 18px;
-    color: #00425D;
-    text-decoration: none;
-}
-
-.link-en::after {
-    content: "";
-    display: flex;
-    height: 1px;
-    background-color: #00425D;
-}
-
-.link-jp {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 12px;
-    color: #00425D;
-    font-weight: 500;
-    text-decoration: none;
-}
-
 
 section {
-    height: 100vh;
-    /* offset for fixed header */
+  height: 100vh;
 }
 
-.fv {
-  position: relative;
-  background-color: #000;
-  padding-left: 200px;
-  padding-bottom: 200px;
-  display:flex;
-  gap: 50px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  overflow: hidden; /* to hide overflow of pseudo-element */
-}
-
-.fv::before {
-  content: "";
-  position: absolute;
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+header {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80px;
+  padding: 0 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #73D5FF;
+  background-image: url(../images/logo-bg.png);
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* --------------------------------------------------
+   NAVIGATION (DESKTOP)
+-------------------------------------------------- */
+.nav-bar {
+  display: flex;
+  gap: 60px;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.link-en {
+  position: relative;
+  font-family: 'Fugaz One';
+  font-size: 18px;
+  font-weight: 600;
+  color: #00425D;
+  transition: color 0.3s ease;
+}
+
+/* Animated underline */
+.link-en::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #00425D;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.link-en:hover {
+  color: #007EA7;
+}
+
+.link-en:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.link-jp {
+  font-size: 12px;
+  font-weight: 500;
+  color: #00425D;
+}
+
+/* --------------------------------------------------
+   HAMBURGER MENU
+-------------------------------------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #00425D;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Hidden drawer menu */
+.hamburger-menu-content {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: #73D5FF;
+  display: flex;
+  flex-direction: column;
+  margin-top: 65px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  transition: right 0.4s ease;
+  z-index: -1;
+}
+
+/* When active */
+.hamburger.active .hamburger-menu-content {
+  right: 0;
+}
+
+/* Hamburger to "X" */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* --------------------------------------------------
+   HERO / FIRST VIEW
+-------------------------------------------------- */
+.fv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 0 0 200px 200px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* Mirrored background image */
+.fv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image: url(../images/source_image/fv-bg.jpg);
   background-size: cover;
   background-position: center;
-  transform: scaleX(-1); /* ← horizontal mirror */
+  transform: scaleX(-1);
   z-index: 0;
 }
 
-/* Keep your text and other elements above the mirrored background */
 .fv > * {
   position: relative;
   z-index: 1;
 }
 
+.main-copy-sp {
+    display: none;
+}
+
+/* --------------------------------------------------
+   CONTENT SECTIONS
+-------------------------------------------------- */
 .badge-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 .badge-group img {
-    width: 180px;
-    height: 150px;
+  width: 180px;
+  height: 150px;
 }
 
 .sub-copy {
-    background-color: #D28F13;
-    padding: 15px;
-    padding-left: 30px;
+  background-color: #D28F13;
+  padding: 15px 30px;
 }
 
 .sub-copy h2 {
-    font-size: 28px;
-    color: #FFFFFF;
-    font-weight: 800;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 800;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .about {
-    background: #fff8e1;
+  background: #fff8e1;
 }
 
 .works {
-    background: #ede7f6;
+  background: #ede7f6;
 }
+
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
+@media (max-width: 1080px) {
+  header {
+    padding: 0 50px;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  .fv {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+@media(max-width: 725px) {
+    .main-copy-sp {
+        display: block;
+    }
+    .main-copy {
+        display: none;
+    }
+    .fv {
+        justify-content: flex-end;
+    }
+    .sub-copy {
+        width: 100%;
+        text-align: center;
+    }
+    .sub-copy h2 {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 640px) {
+    header {
+        height: 70px;
+        padding-inline: 20px;
+    }
+    .sub-copy {
+        padding-inline: 20px;
+    }
+}
+
+
+/* ============================================================= */
