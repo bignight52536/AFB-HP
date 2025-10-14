@@ -1,0 +1,167 @@
+/* Reset + layout basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    background-image: url(../images/logo-bg.png);
+    background-repeat: no-repeat;
+    background-color: #73D5FF;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 60px;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link-en {
+    font-family: 'Fugaz One';
+    font-size: 18px;
+    color: #00425D;
+    text-decoration: none;
+}
+
+.link-en::after {
+    content: "";
+    display: flex;
+    height: 1px;
+    background-color: #00425D;
+}
+
+.link-jp {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    color: #00425D;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+section {
+    height: 100vh;
+    /* offset for fixed header */
+}
+
+.fv {
+  position: relative;
+  background-color: #000;
+  padding-left: 200px;
+  padding-bottom: 200px;
+  display:flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  overflow: hidden; /* to hide overflow of pseudo-element */
+}
+
+.fv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/source_image/fv-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: scaleX(-1); /* ← horizontal mirror */
+  z-index: 0;
+}
+
+/* Keep your text and other elements above the mirrored background */
+.fv > * {
+  position: relative;
+  z-index: 1;
+}
+
+.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.badge-group img {
+    width: 180px;
+    height: 150px;
+}
+
+.sub-copy {
+    background-color: #D28F13;
+    padding: 15px;
+    padding-left: 30px;
+}
+
+.sub-copy h2 {
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: 800;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about {
+    background: #fff8e1;
+}
+
+.works {
+    background: #ede7f6;
+}

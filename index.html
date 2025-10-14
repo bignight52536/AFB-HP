@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>【株式会社AFB】のサイト</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description"
         content="株式会社AFBのサイトです。株式会社AFBの企業情報や求人情報などがご覧いただけます。">
-    <meta data-n-head="ssr" data-hid="keywords" name="keywords" content="株式会社AFB,株式会社AFB,求人">
-    <meta data-n-head="ssr" data-hid="robots" name="robots" content="index,follow">
-    <meta data-n-head="ssr" data-hid="og:site_name" property="og:site_name" content="【株式会社AFB】のサイト">
-    <meta data-n-head="ssr" data-hid="og:title" property="og:title" content="【株式会社AFB】のサイト">
-    <meta data-n-head="ssr" data-hid="og:type" property="og:type" content="website">
-    <meta data-n-head="ssr" data-hid="og:url" property="og:url" content="https://a-f-b.jbplt.jp/">
-    <meta data-n-head="ssr" data-hid="og:description" property="og:description"
-        content="株式会社AFBのサイトです。株式会社AFBの企業情報や求人情報などがご覧いただけます。">
-    <meta data-n-head="ssr" data-hid="og:image" property="og:image"
-        content="https://cdn.jbplt.jp/img/top/main_image/main_22.jpg">
-    <link data-n-head="ssr" rel="stylesheet" href="//cdn.jbplt.jp/css/theme/02.css?86ae51d5">
-    <link data-n-head="ssr" rel="stylesheet" href="//cdn.jbplt.jp/css/theme/face.css?86ae51d5">
-    <link data-n-head="ssr" rel="canonical" href="https://a-f-b.jbplt.jp/">
-    <script data-n-head="ssr" src="//cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
-    <script data-n-head="ssr">cssVars({ rootElement: document });</script>
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/runtime.fd89be2.js" as="script">
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/commons/app.6aa94ef.js" as="script">
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/vendors~app.79b0371.js" as="script">
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/app.7acb61c.js" as="script">
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/pages/index.a1d2da8.js" as="script">
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/8.0228bcd.js" as="script">
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/9.8cba105.js" as="script">
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/22.4b4bfd9.js" as="script">
-    <link rel="preload" href="//cdn.jbplt.jp/_nuxt/16.1b39d5c.js" as="script">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://db.onlinewebfonts.com/c/bbcc889bed34a1678c6a044df8e83428?family=Noto+Sans" rel="stylesheet"
+        type="text/css" />
+    <link href="https://db.onlinewebfonts.com/c/6bb72788de0e0eb09756d36c0ba629cf?family=Fugaz+One" rel="stylesheet"
+        type="text/css" />
 </head>
+
 <body>
     <header>
-        <div class="logo"></div>
-        <div class="nav-bar"></div>
+        <div class="logo">
+            <a href="./index.html"><img src="./assets/images/logo-img.png" alt="logo-img"></a>
+        </div>
+        <div class="nav-bar">
+            <a href="#" class="nav-link">
+                <p class="link-en">HOME</p>
+                <p class="link-jp">ホーム</p>
+            </a>
+            <a href="#" class="nav-link">
+                <p class="link-en">ABOUT US</p>
+                <p class="link-jp">会社案内</p>
+            </a>
+            <a href="#" class="nav-link">
+                <p class="link-en">WORKS</p>
+                <p class="link-jp">事業内容</p>
+            </a>
+            <a href="#" class="nav-link">
+                <p class="link-en">RECRUIT</p>
+                <p class="link-jp">採用情報</p>
+            </a>
+            <a href="#" class="nav-link">
+                <p class="link-en">NEWS</p>
+                <p class="link-jp">お知らせ</p>
+            </a>
+            <a href="#" class="nav-link">
+                <p class="link-en">CONTACT</p>
+                <p class="link-jp">お問い合わせ</p>
+            </a>
+        </div>
     </header>
     <main>
         <section class="fv">
-            <div class="main-copy"></div>
-            <div class="badge-group"></div>
-            <div class="sub-copy"></div>
+            <div class="main-copy">
+                <img src="./assets/images/main-copy.svg" alt="main-copy">
+            </div>
+            <div class="badge-group">
+                <img src="./assets/images/badge01.png" alt="badge01">
+                <img src="./assets/images/badge02.png" alt="badge02">
+                <img src="./assets/images/badge03.png" alt="badge03">
+            </div>
+            <div class="sub-copy">
+                <h2>スタッフの幸せが会社の繁栄につながる。<br>
+                    そんな環境をAFBは実現しています。</h2>
+            </div>
         </section>
         <section class="about">
             <div class="section-title">
@@ -89,7 +108,33 @@
             </div>
         </section>
     </main>
+    <!-- Lenis Smooth Scroll Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <script>
+        // Initialize Lenis for smooth scroll feeling
+        const lenis = new Lenis({
+            duration: 1.2, // smoothness speed
+            smooth: true,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        });
 
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Optional: smooth scroll when clicking nav links
+        document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) lenis.scrollTo(target, { offset: -60 }); // offset for header height
+            });
+        });
+    </script>
 </body>
 
 </html>
