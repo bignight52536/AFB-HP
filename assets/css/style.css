@@ -719,7 +719,7 @@ footer {
 .com-contact {
   display: flex;
   flex-direction: column;
-  gap: 5;
+  gap: 5px;
 }
 
 .com-contact h2 {
@@ -828,11 +828,11 @@ footer {
   }
 
   .nav-bar {
-    display: none;
+    display: none !important;
   }
 
   .hamburger {
-    display: flex;
+    display: flex !important;
   }
   .fv {
     justify-content: center;
@@ -1030,6 +1030,9 @@ footer {
     .contact>img {
       width: 100%;
     }
+    .handle-badge {
+      width: 350px;
+    }
 }
 
 
@@ -1073,6 +1076,22 @@ footer {
     padding: 10px;
   }
   .work-item-txt p {
+    font-size: 16px;
+  }
+  .handle-badge {
+      width: 280px;
+    }
+  .banner {
+    width: 150px;
+  }
+  .posted-date span {
+    padding-inline: 10px;
+  }
+  .badge-group img {
+    width: 160px;
+    height: 140px;
+  }
+  .sub-copy h2 {
     font-size: 16px;
   }
 }

@@ -1,0 +1,188 @@
+/* --------------------------------------------------
+   RESET & BASE
+-------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+    margin-top: 80px;
+}
+.sub-fv {
+    width: 100%;
+    height: 350px;
+    background: url('../images/source_image/news-fv-img.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.page-title {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 350px;
+    height: 80px;
+    background-color: #6CD3FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: #00425D;
+    font-family: "DM Sans Bold";
+}
+
+
+.news {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 100px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.news-title {
+  padding-left: 200px;
+}
+
+.news-list {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin: 0 auto;
+  padding-block: 50px;
+}
+
+.news-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.banner {
+  width: 350px;
+  height: 220px;
+  position: relative;
+}
+
+.banner>img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+.banner img:nth-child(2) {
+  position: absolute;
+  width: 90px;
+  height: 75px;
+  top: 0;
+  right: 0;
+}
+
+.news-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+
+.posted-date {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.posted-date p {
+  font-size: 24px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 800;
+  color: #D28F13;
+}
+
+.posted-date span {
+  width: fit-content;
+  padding-inline: 15px;
+  padding-block: 5px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  background-color: #D28F13;
+}
+
+.news-content p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.banner {
+  width: 350px;
+  height: 220px;
+  position: relative;
+}
+
+.banner>img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+.banner img:nth-child(2) {
+  position: absolute;
+  width: 90px;
+  height: 75px;
+  top: 0;
+  right: 0;
+}
+
+@media(max-width:975px) {
+  .news-list {
+    padding-inline: 50px;
+  }
+  .news-title {
+    padding-left: 50px;
+  }
+  .news-item {
+    gap: 20px;
+  }
+  .footer-container {
+    padding-inline: 0;
+  }
+}
+@media(max-width:725px) {
+    .news-content p {
+      font-size: 16px;
+    }
+    .news-content {
+      gap: unset;
+      justify-content: space-between;
+    }
+    .news {
+      padding-bottom: 0px;
+    }
+    .banner {
+      width: 200px;
+      height: 150px;
+    }
+}
+@media(max-width:640px) {
+    .news-list {
+      padding-inline: 20px;
+    }
+    .news-item {
+      gap: 10px;
+    }
+    .banner {
+        width: 150px;
+        height: 150px;
+    }
+    .posted-date span{
+        padding-inline: 10px;
+    }
+}
