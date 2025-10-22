@@ -678,14 +678,100 @@ header {
   z-index: 2;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #6CD3FF;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+}
 
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  padding-inline: 200px;
+}
 
+.company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+.com-logo {
+  display: flex;
+  flex-direction: column;
+}
 
+.com-logo img {
+  width: 150px;
+}
 
+.com-logo h1 {
+  font-size: 24px;
+  color: #333333;
+}
 
+.com-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5;
+}
 
+.com-contact h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+}
 
+.site-map {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav-link {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.social {
+  display: flex;
+  gap: 30px;
+}
+
+.social img{
+  width: 30px;
+}
+
+.privacy-copyright {
+  display: flex;
+  padding-inline: 0;
+  justify-content: space-around;
+  gap: unset;
+  background-color: #00618B;
+  color: #ffffff;
+  padding-block: 10px;
+  z-index: 2;
+}
+
+.footer-bg {
+  position: absolute;
+  right: 0;
+  height: inherit;
+  height: inherit;
+  bottom: 0;
+  z-index: 1;
+}
+
+.en-link {
+  font-family: 'Fugaz One';
+}
 
 
 
@@ -724,12 +810,15 @@ header {
     .recruit-card {
       width: 100%;
       align-items: center;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.8);
     }
     .contact-card {
       width: 100%;
       align-items: center;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .footer-container {
+      padding-inline: 100px;
     }
 }
 
@@ -781,6 +870,9 @@ header {
   }
   .news-item {
     gap: 20px;
+  }
+  .footer-container {
+    padding-inline: 0;
   }
 }
 
@@ -875,6 +967,21 @@ header {
     }
     .news {
       padding-bottom: 0px;
+    }
+    .footer-container {
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+    .privacy-copyright {
+      padding-inline: 0;
+      justify-content: space-around;
+      gap: unset;
+      background-color: #00618B;
+      color: #ffffff;
+      padding-block: 10px;
+      
     }
 }
 
